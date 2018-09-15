@@ -4,7 +4,7 @@ export default function html(options) {
     title = 'Codejobs',
     stylesheet = '/css/style.css',
     markup,
-    initialState
+    initialState,
   } = options;
 
   return `

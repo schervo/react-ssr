@@ -7,6 +7,6 @@ export default function deviceReducer(state = {}) {
 
   return {
     ...state,
-    isMobile
+    isMobile,
   };
 }

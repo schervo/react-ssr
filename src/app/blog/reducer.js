@@ -2,7 +2,7 @@
 import { FETCH_POSTS } from './actionTypes';
 
 const initialState = {
-  posts: []
+  posts: [],
 };
 
 export default function blogReducer(state = initialState, action) {
@@ -10,7 +10,7 @@ export default function blogReducer(state = initialState, action) {
     case FETCH_POSTS.success(): {
       return {
         ...state,
-        posts: action.payload
+        posts: action.payload,
       };
     }
 

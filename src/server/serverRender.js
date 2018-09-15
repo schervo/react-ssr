@@ -41,7 +41,7 @@ export default function serverRender() {
               location={req.url}
               context={context}
             />
-          </Provider>
+          </Provider>,
         );
 
         if (context.url) {
@@ -49,7 +49,7 @@ export default function serverRender() {
         } else {
           res.send(html({
             markup,
-            initialState
+            initialState,
           }));
         }
       })

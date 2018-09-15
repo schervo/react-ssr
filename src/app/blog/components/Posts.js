@@ -31,7 +31,7 @@ class Posts extends Component {
             <p>
               {timeAgo(post.date)}
             </p>
-          </div>
+          </div>,
         )}
       </div>
     );

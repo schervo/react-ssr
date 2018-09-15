@@ -25,7 +25,13 @@
     "block-scoped-var": 2,
     "brace-style": [2, 1tbs],
     "callback-return": 2,
-    "comma-dangle": [2, never],
+    "comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "always-multiline",
+      "exports": "always-multiline",
+      "functions": "always-multiline"
+    }],
     "complexity": [2, 8],
     "curly": 2,
     "dot-location": [2, property],

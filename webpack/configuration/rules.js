@@ -1,5 +1,6 @@
 // Dependencies
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import path from 'path';
 
 // Environment
 const isDevelopment = process.env.NODE_ENV !== 'production';
@@ -19,14 +20,14 @@ export default type => {
               'env', {
                 modules: false,
                 node: pkg.engines.node,
-                browsers: pkg.browserslist
-              }
-            ]
-          ]
-        }
+                browsers: pkg.browserslist,
+              },
+            ],
+          ],
+        },
       },
-      exclude: /node_modules/
-    }
+      exclude: /node_modules/,
+    },
   ];
 
   if (!isDevelopment || type === 'server') {
@@ -36,9 +37,15 @@ export default type => {
         fallback: 'style-loader',
         use: [
           'css-loader?minimize=true&modules=true&localIdentName=[name]__[local]',
-          'sass-loader'
-        ]
-      })
+          'sass-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: require(path.join(process.cwd(), 'src/shared/styles/index.js')),
+            },
+          },
+        ],
+      }),
     });
   } else {
     rules.push({
@@ -46,10 +53,21 @@ export default type => {
       use: [
         'style-loader',
         'css-loader?minimize=true&modules=true&localIdentName=[name]__[local]',
-        'sass-loader'
-      ]
+        'sass-loader',
+        {
+          loader: 'sass-resources-loader',
+          options: {
+            resources: require(path.join(process.cwd(), 'src/shared/styles/index.js')),
+          },
+        },
+      ],
     });
   }
+
+  rules.push({
+    test: /\.(jpe?g|png|gif|svg|ico)$/i,
+    use: 'url-loader?limit=8192',
+  });
 
   return rules;
 };

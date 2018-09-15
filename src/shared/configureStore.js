@@ -7,12 +7,12 @@ import rootReducer from './reducers';
 
 export default function configureStore(initialState) {
   const middleware = [
-    thunk
+    thunk,
   ];
 
   return createStore(
     rootReducer,
     initialState,
-    applyMiddleware(...middleware)
+    applyMiddleware(...middleware),
   );
 }

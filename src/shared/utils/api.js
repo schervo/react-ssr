@@ -11,10 +11,11 @@ export function apiEndpoint(endpoint, qs, fetchingFrom) {
   }
 
   if (fetchingFrom === 'server') {
-    apiUrl = 'http://localhost:3000';
+    // apiUrl = 'http://localhost:3000';
+    apiUrl = 'https://jsonplaceholder.typicode.com';
   }
 
-  return `${apiUrl}/api/${endpoint}${query}`;
+  return `${apiUrl}/${endpoint}${query}`;
 }
 
 export function apiFetch(endpoint, options = {}, query = false) {
@@ -37,15 +38,15 @@ export function apiOptions(options = {}) {
   const {
     method = 'GET',
     headers = {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
-    body = false
+    body = false,
   } = options;
 
   const newOptions = {
     method,
     headers,
-    credentials: 'include'
+    credentials: 'include',
   };
 
   if (body) {

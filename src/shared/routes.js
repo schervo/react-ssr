@@ -9,16 +9,16 @@ const routes = [
   {
     path: '/',
     component: Home,
-    exact: true
+    exact: true,
   },
   {
     path: '/about',
-    component: About
+    component: About,
   },
   {
     path: '/blog',
-    component: Blog
-  }
+    component: Blog,
+  },
 ];
 
 export default routes;

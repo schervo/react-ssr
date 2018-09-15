@@ -15,14 +15,14 @@ node_modules/
 .yarn-integrity
 
 # Build directory
-dist/
+# dist/
 
 # Public
 *.hot-update.js
 *.hot-update.json
-public/css/style.css
-public/**/*.bundle.js
-public/**/*.bundle.js.gz
-public/app/report.html
+# public/css/style.css
+# public/**/*.bundle.js
+# public/**/*.bundle.js.gz
+# public/app/report.html
 
 package-lock.json

@@ -14,7 +14,7 @@ import { isMobile, isBot } from '../shared/utils/device';
 import webpackConfig from '../../webpack.config';
 
 // Client Render
-import clientRender from './clientRender';
+// import clientRender from './clientRender';
 
 // API
 import api from './api';
@@ -28,7 +28,7 @@ const isAnalyzer = process.env.ANALYZER === 'true';
 // Express app
 const app = express();
 const compiler = webpack(webpackConfig);
-const port = process.env.NODE_PORT || 3000;
+const port = process.env.PORT || 3000;
 
 // GZip Compression just for Production
 if (!isDevelopment) {
@@ -61,7 +61,7 @@ if (isDevelopment) {
 }
 
 // Client Side Rendering
-app.use(clientRender());
+// app.use(clientRender());
 
 if (!isDevelopment) {
   try {

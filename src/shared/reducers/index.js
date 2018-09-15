@@ -9,7 +9,7 @@ import device from './deviceReducer';
 
 const rootReducer = combineReducers({
   blog,
-  device
+  device,
 });
 
 export default rootReducer;

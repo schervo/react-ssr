@@ -30,5 +30,5 @@ class Blog extends Component {
 }
 
 export default connect(({ blog }) => ({
-  posts: blog.posts
+  posts: blog.posts,
 }), null)(Blog);

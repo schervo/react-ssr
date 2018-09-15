@@ -6,13 +6,13 @@ export default type => {
     return {
       filename: 'server.js',
       path: path.resolve(__dirname, '../../dist'),
-      libraryTarget: 'commonjs2'
+      libraryTarget: 'commonjs2',
     };
   }
 
   return {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, '../../public/app'),
-    publicPath: '/app/'
+    publicPath: '/app/',
   };
 };

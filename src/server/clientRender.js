@@ -9,13 +9,13 @@ export default function clientRender() {
 
     const initialState = {
       device: {
-        isMobile: res.locals.isMobile
-      }
+        isMobile: res.locals.isMobile,
+      },
     };
 
     res.send(html({
       markup: '',
-      initialState
+      initialState,
     }));
   };
 }

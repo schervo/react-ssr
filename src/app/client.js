@@ -25,7 +25,7 @@ const renderApp = Component => {
         <Component />
       </AppContainer>
     </Provider>,
-    rootElement
+    rootElement,
   );
 };
 
